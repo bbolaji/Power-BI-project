@@ -4,39 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project Market Hub - Homepage</title>
+    <title>My projects - Homepage</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to project Market Hub</h1>
+        <h1>Welcome to my Portfolio</h1>
 		<div class="image-container">
-            <img src="image_96.jpg" alt="home">
-        <p>Your Ultimate Destination for Buying and Selling projects</p>
+            <img src="Default.jpg" alt="home">
+        <p>A page that shows you my career progression and a footprint of all my projects</p>
         <form action="search.php" method="GET" class="search-form">
             <input type="text" name="query" placeholder="Search for projects...">
             <button type="submit">Search</button>
         </form>
     </header>
 
-    <main>
-        <section class="Search">
-            <h2>Featured search</h2>
-            <div class="projects">
-                <!-- PHP code to fetch and display featured projects -->
-                <?php
-                include('../includes/db.php');
-                $result = $conn->query("SELECT * FROM projects ORDER BY created_at DESC LIMIT 6");
-                while ($project = $result->fetch_assoc()) {
-                    echo '<div class="project-item">';
-                    echo '<img src="../assets/images/' . $project['image'] . '" alt="' . $project['make'] . ' ' . $project['model'] . '">';
-                    echo '<h3>' . $project['make'] . ' ' . $project['model'] . '</h3>';
-                    echo '<p>Price: $' . number_format($project['price']) . '</p>';
-                    echo '<a href="listing.php?id=' . $project['id'] . '">View Details</a>';
-                    echo '</div>';
-                }
-                ?>
-            </div>
         </section>
     </main>
 <section id="Power BI projects">
