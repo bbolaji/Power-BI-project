@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project Market Hub - Homepage</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to project Market Hub</h1>
+		<div class="image-container">
+            <img src="image_96.jpg" alt="home">
+        <p>Your Ultimate Destination for Buying and Selling projects</p>
+        <form action="search.php" method="GET" class="search-form">
+            <input type="text" name="query" placeholder="Search for projects...">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <main>
+        <section class="Search">
+            <h2>Featured search</h2>
+            <div class="projects">
+                <!-- PHP code to fetch and display featured projects -->
+                <?php
+                include('../includes/db.php');
+                $result = $conn->query("SELECT * FROM projects ORDER BY created_at DESC LIMIT 6");
+                while ($project = $result->fetch_assoc()) {
+                    echo '<div class="project-item">';
+                    echo '<img src="../assets/images/' . $project['image'] . '" alt="' . $project['make'] . ' ' . $project['model'] . '">';
+                    echo '<h3>' . $project['make'] . ' ' . $project['model'] . '</h3>';
+                    echo '<p>Price: $' . number_format($project['price']) . '</p>';
+                    echo '<a href="listing.php?id=' . $project['id'] . '">View Details</a>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+        </section>
+    </main>
+<section id="Power BI projects">
+        <h2>Power BI Projects</h2>
+        <div class="projects">
+            <img src="" alt="olympics">
+            <h3>image-container</h3>
+            <p>Analysis of the 2020 olympics, giving a bird eye view of countries and individual performance at a glance</p>
+        </div>
+        <div class="Sales dashboard">
+            <img src="Departmental sales dashboard.jpg" alt="sales dashboard">
+            <h3>sales dashboard</h3>
+            <p>break down of sales performance </p>
+        </div>
+        <div class="Medals">
+            <img src="Medals.jpg" alt="Medals dashboard">
+            <h3>sales dashboard</h3>
+            <p>break down of sales performance </p>
+			</div>
+        <div class="POS dashboard">
+            <img src="POS dashboard.jpg" alt="sales dashboard">
+            <h3>POS dashboard</h3>
+            <p>break down of POS performance </p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 PowerBI portfolio. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+    <?php include('../includes/footer.php'); ?>
+</body>
+</html>
