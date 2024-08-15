@@ -1,66 +1,75 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My projects - Homepage</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>Bolaji Babalola | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <h1>Welcome to my Portfolio</h1>
-		<div class="image-container">
-            <img src="default.jpg" alt="home">
-        <p>A page that shows you my career progression and a footprint of all my projects</p>
-        <form action="search.php" method="GET" class="search-form">
-            <input type="text" name="query" placeholder="Search for projects...">
-            <button type="submit">Search</button>
-        </form>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-        </section>
-    </main>
-<section id="Power BI projects">
-        <h2>Power BI Projects</h2>
-        <div class="projects">
-            <olympics. jpg="" alt="olympics">
-            <h3>image-container</h3>
-            <p>Analysis of the 2020 olympics, giving a bird eye view of countries and individual performance at a glance</p>
+    <section id="home">
+        <div class="intro">
+            <h1>Your Name</h1>
+            <p>Data Analyst | Power BI Expert | Business Intelligence</p>
+            <a href="#projects" class="cta">View My Work</a>
         </div>
-        <div class="Sales dashboard">
-            <img src="Departmental sales dashboard.jpg" alt="sales dashboard">
-            <h3>sales dashboard</h3>
-            <p>break down of sales performance </p>
-        </div>
-        <div class="Medals">
-            <img src="Medal.jpg" alt="Medal dashboard">
-            <h3>sales dashboard</h3>
-            <p>break down of sales performance </p>
-			</div>
-        <div class="POS dashboard">
-            <img src="POS dashboard.jpg" alt="sales dashboard">
-            <h3>POS dashboard</h3>
-            <p>break down of POS performance </p>
     </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate Data Analyst with over X years of experience in Power BI, data analytics, and business intelligence...</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="Failed_bank.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>we analysed failed banks and the reason's why this banks failed, root causes and made recommendations...</p>
+            </div>
+            <div class="project-card">
+                <img src="olympics.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>we analyzed the overall performance at the 2020 olympics and where able to answer alot of questions along the way </p>
+            </div>
+            <!--</div>
+            <div class="project-card">
+                <img src="departmental sales dashboard.jpg" alt="Project 2">
+                <h3>Project 3</h3>
+                <p>we analyzed the performance of our terminal to identify why some of our transactions failed as one of our key performance indicator  is our successful transaction rate</p>
+            </div> Add more project cards as needed -->
+        </div>
+    </section>
+
     <section id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            <button type="submit">Send</button>
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Bolaji babalola" required>
+            <input type="email" placeholder="Hellobjay247@gmail.com" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
         </form>
     </section>
+
     <footer>
-        <p>&copy; 2024 PowerBI portfolio. All rights reserved.</p>
+        <p>&copy; 2024 Your Name. All Rights Reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
-</html>
-    <?php include('../includes/footer.php'); ?>
-</body>
+
 </html>
