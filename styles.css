@@ -43,7 +43,7 @@ nav ul li a:hover {
         }
 
         .project-catalog {
-            width: 25%;
+            width: 35%;
             background-color: #f8f8f8;
             padding: 20px;
             border-right: 2px solid #ddd;
@@ -74,7 +74,7 @@ nav ul li a:hover {
         }
 
         .main-content {
-            width: 75%;
+            width: 65%;
             padding: 20px;
         }
 
