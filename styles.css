@@ -37,6 +37,46 @@ nav ul li a {
 nav ul li a:hover {
     color: #f4b400;
 }
+   /* Basic styles for the project catalog */
+        .container {
+            display: flex;
+        }
+
+        .project-catalog {
+            width: 25%;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-right: 2px solid #ddd;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .project-catalog h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-catalog ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .project-catalog li {
+            margin: 8px 0;
+        }
+
+        .project-catalog a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .project-catalog a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            width: 75%;
+            padding: 20px;
+        }
 
 /* Home Section */
 #home {
