@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
     color: #333;
 }
 
@@ -15,7 +15,7 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 10px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -24,43 +24,55 @@ header {
 
 nav ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     list-style: none;
-    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 10px 15px;
+    transition: color 0.3s ease, background 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #f4b400;
+    background: #444;
+    border-radius: 5px;
 }
 
-/* Project Catalog */
+/* General Container */
 .container {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
 }
 
+/* Project Catalog */
 .project-catalog {
     width: 100%;
+    max-width: 300px;
     background-color: #f8f8f8;
     padding: 20px;
-    border-right: 2px solid #ddd;
-    max-height: 100vh;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
 }
 
 .project-catalog h3 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
 }
 
 .project-catalog ul {
@@ -75,6 +87,7 @@ nav ul li a:hover {
 .project-catalog a {
     text-decoration: none;
     color: #007BFF;
+    font-size: 0.9rem;
     transition: color 0.3s ease;
 }
 
@@ -83,36 +96,29 @@ nav ul li a:hover {
     color: #0056b3;
 }
 
-/* Main Content */
-.main-content {
-    flex: 1;
-    padding: 20px;
-}
-
 /* Home Section */
 #home {
     background: url('background.jpg') no-repeat center center/cover;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    scroll-behavior: smooth;
 }
 
 .intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
 .intro p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
 .cta {
-    padding: 10px 30px;
+    padding: 10px 25px;
     background: #f4b400;
     color: #333;
     text-decoration: none;
@@ -128,45 +134,47 @@ nav ul li a:hover {
 
 /* About Section */
 #about {
-    padding: 50px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
 #about h2 {
-    margin-bottom: 20px;
-    font-size: 2rem;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #333;
 }
 
 #about img {
-    width: 100%;
-    max-width: 300px;
+    width: 80%;
+    max-width: 250px;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 /* Projects Section */
 #projects {
-    padding: 50px 20px;
+    padding: 40px 20px;
 }
 
 #projects h2 {
     text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: #333;
 }
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
 .project-card {
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 10px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -178,20 +186,24 @@ nav ul li a:hover {
 .project-card img {
     max-width: 100%;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .project-card h3 {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #333;
 }
 
 /* Contact Section */
 #contact {
-    padding: 50px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
 #contact form {
+    max-width: 600px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -199,15 +211,14 @@ nav ul li a:hover {
 
 #contact input, #contact textarea {
     width: 100%;
-    max-width: 500px;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 #contact button {
-    padding: 10px 30px;
+    padding: 10px 20px;
     background: #f4b400;
     color: #333;
     border: none;
@@ -227,11 +238,12 @@ footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 footer p {
     margin: 0;
+    font-size: 0.9rem;
 }
 
 /* Media Queries for Mobile Responsiveness */
@@ -241,24 +253,11 @@ footer p {
     }
 
     .project-catalog {
-        width: 100%;
-        border-right: none;
-        border-bottom: 2px solid #ddd;
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 
-    .main-content {
-        width: 100%;
-    }
-
-    .intro h1 {
-        font-size: 2rem;
-    }
-
-    .intro p {
-        font-size: 1rem;
-    }
-
-    .cta {
-        padding: 8px 20px;
+    .project-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
