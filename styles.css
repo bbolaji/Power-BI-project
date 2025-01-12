@@ -15,7 +15,7 @@ body {
 header {
     background: #333;
     color: #fff;
-    padding: 10px;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -24,21 +24,20 @@ header {
 
 nav ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end; /* Align menu items to the far right */
     list-style: none;
-    margin: 0 auto;
-    max-width: 1200px;
+    margin-right: 20px;
 }
 
 nav ul li {
-    margin: 0;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    padding: 10px 15px;
+    padding: 5px 10px;
     transition: color 0.3s ease, background 0.3s ease;
 }
 
@@ -48,54 +47,6 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* General Container */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-    gap: 20px;
-}
-
-/* Project Catalog */
-.project-catalog {
-    width: 100%;
-    max-width: 300px;
-    background-color: #f8f8f8;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow-y: auto;
-}
-
-.project-catalog h3 {
-    margin-bottom: 15px;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.project-catalog ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.project-catalog li {
-    margin: 8px 0;
-}
-
-.project-catalog a {
-    text-decoration: none;
-    color: #007BFF;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.project-catalog a:hover {
-    text-decoration: underline;
-    color: #0056b3;
-}
-
 /* Home Section */
 #home {
     background: url('background.jpg') no-repeat center center/cover;
@@ -103,18 +54,20 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     text-align: center;
     color: #fff;
+    padding: 10px 20px;
 }
 
 .intro h1 {
     font-size: 2.2rem;
-    margin-bottom: 10px;
+    margin-bottom: 15px; /* Reduced spacing below header */
 }
 
 .intro p {
     font-size: 1.1rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Reduced spacing below paragraph */
 }
 
 .cta {
@@ -124,6 +77,7 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    margin-bottom: 15px; /* Adjust spacing below button */
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -132,23 +86,10 @@ nav ul li a:hover {
     color: #f4b400;
 }
 
-/* About Section */
-#about {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#about h2 {
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-    color: #333;
-}
-
-#about img {
-    width: 80%;
-    max-width: 250px;
+#home img {
+    max-width: 100%;
     border-radius: 10px;
-    margin: 15px 0;
+    margin-top: 10px; /* Reduced spacing above image */
 }
 
 /* Projects Section */
@@ -158,15 +99,16 @@ nav ul li a:hover {
 
 #projects h2 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-size: 1.8rem;
     color: #333;
 }
 
 .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    display: flex; /* Switch to a horizontal flex layout */
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Center items horizontally */
 }
 
 .project-card {
@@ -175,6 +117,8 @@ nav ul li a:hover {
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure each card takes the full row width */
+    max-width: 300px; /* Limit width for larger screens */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -195,69 +139,14 @@ nav ul li a:hover {
     color: #333;
 }
 
-/* Contact Section */
-#contact {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#contact input, #contact textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-#contact button {
-    padding: 10px 20px;
-    background: #f4b400;
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#contact button:hover {
-    background: #fff;
-    color: #f4b400;
-}
-
-/* Footer */
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-/* Media Queries for Mobile Responsiveness */
+/* Media Queries for Mobile Compatibility */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+    #projects .project-grid {
+        flex-direction: column; /* Ensure a stacked layout for mobile */
+        align-items: center;
     }
 
-    .project-catalog {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    .project-card {
+        width: 90%; /* Allow smaller cards on narrow screens */
     }
 }
