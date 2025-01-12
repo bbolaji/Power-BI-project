@@ -16,67 +16,78 @@ header {
     background: #333;
     color: #fff;
     padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #f4b400;
 }
-   /* Basic styles for the project catalog */
-        .container {
-            display: flex;
-        }
 
-        .project-catalog {
-            width: 35%;
-            background-color: #f8f8f8;
-            padding: 20px;
-            border-right: 2px solid #ddd;
-            height: 100vh;
-            overflow-y: auto;
-        }
+/* Project Catalog */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-        .project-catalog h3 {
-            margin-bottom: 10px;
-        }
+.project-catalog {
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-right: 2px solid #ddd;
+    max-height: 100vh;
+    overflow-y: auto;
+}
 
-        .project-catalog ul {
-            list-style-type: none;
-            padding: 0;
-        }
+.project-catalog h3 {
+    margin-bottom: 10px;
+}
 
-        .project-catalog li {
-            margin: 8px 0;
-        }
+.project-catalog ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .project-catalog a {
-            text-decoration: none;
-            color: #007BFF;
-        }
+.project-catalog li {
+    margin: 8px 0;
+}
 
-        .project-catalog a:hover {
-            text-decoration: underline;
-        }
+.project-catalog a {
+    text-decoration: none;
+    color: #007BFF;
+    transition: color 0.3s ease;
+}
 
-        .main-content {
-            width: 65%;
-            padding: 20px;
-        }
+.project-catalog a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
 
 /* Home Section */
 #home {
@@ -87,15 +98,16 @@ nav ul li a:hover {
     align-items: center;
     text-align: center;
     color: #fff;
+    scroll-behavior: smooth;
 }
 
 .intro h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .intro p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
@@ -106,10 +118,12 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .cta:hover {
     background: #fff;
+    color: #f4b400;
 }
 
 /* About Section */
@@ -120,7 +134,14 @@ nav ul li a:hover {
 
 #about h2 {
     margin-bottom: 20px;
-    font-size: 2.5rem;
+    font-size: 2rem;
+}
+
+#about img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin: 20px 0;
 }
 
 /* Projects Section */
@@ -131,7 +152,7 @@ nav ul li a:hover {
 #projects h2 {
     text-align: center;
     margin-bottom: 40px;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .project-grid {
@@ -146,6 +167,12 @@ nav ul li a:hover {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
@@ -171,7 +198,7 @@ nav ul li a:hover {
 }
 
 #contact input, #contact textarea {
-    width: 80%;
+    width: 100%;
     max-width: 500px;
     padding: 10px;
     margin-bottom: 20px;
@@ -187,10 +214,12 @@ nav ul li a:hover {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 #contact button:hover {
     background: #fff;
+    color: #f4b400;
 }
 
 /* Footer */
@@ -203,4 +232,33 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .project-catalog {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .intro h1 {
+        font-size: 2rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .cta {
+        padding: 8px 20px;
+    }
 }
